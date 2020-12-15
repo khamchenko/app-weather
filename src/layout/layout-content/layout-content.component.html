@@ -1,0 +1,5 @@
+<layout-menu *ngIf="menuService.isVertical && screenService.isLarge() ||
+menuService.showVerticalMenu && !screenService.isLarge()" class='vertical-menu'></layout-menu>
+<div @visibility class='body-style'>
+    <router-outlet></router-outlet>
+</div>

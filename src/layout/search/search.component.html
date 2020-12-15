@@ -1,0 +1,6 @@
+<div>
+    <form (ngSubmit)="onSubmit(searchForm.value)" class="search-style"  [formGroup]="searchForm">
+        <input class="form-control" placeholder="Поиск города" autocomplete="off" type='text' formControlName="city">
+        <button type="submit" class="btn btn-secondary" [disabled]="searchForm.invalid">Найти</button>
+    </form>
+</div>

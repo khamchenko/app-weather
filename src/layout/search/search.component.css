@@ -1,0 +1,30 @@
+:host {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+.search-style {
+    display: flex;
+}
+
+.search-style input {
+    border-radius: 5px 0px 0px 5px;
+    min-width: 300px;
+    border: 1px solid #ececed;
+    padding: 4pt 8pt;
+    color: #48484a;
+    font-size: 14px;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border: none;
+    width: 100%;
+    border-radius: 4pt 0 0 4pt;
+    outline: none;
+}
+
+.search-style button {
+    border-radius: 0px 5px 5px 0px;
+}
