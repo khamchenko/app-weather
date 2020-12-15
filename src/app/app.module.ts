@@ -13,7 +13,9 @@ import { NotFoundComponent } from './routes/not_found/not_found.component';
 import { appRoutes } from './routes/app.routes';
 
 import { AppDataService } from './services/app-data.service';
-import { HttpClientModule } from '@angular/common/http';
+import { ParamInterceptor } from './services/api.interceptor';
+
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,14 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule, LayoutModule, RouterModule.forRoot(appRoutes), FormsModule, HttpClientModule
   ],
-  providers: [ AppDataService ],
-  bootstrap: [ AppComponent ]
+  providers: [
+    AppDataService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: ParamInterceptor,
+      multi: true
+    }
+  ],
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
