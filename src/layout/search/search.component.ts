@@ -15,7 +15,8 @@ export class SearchComponent implements OnInit {
   @Output() update: EventEmitter<any> = new EventEmitter();
 
   searchForm: FormGroup;
-
+  status;
+  
   constructor() {
 
   }

@@ -1,3 +1,21 @@
-<div>
-
-</div>
+<table class="view_table">
+  <thead>
+    <tr class="view_row">
+      <th class="view_elem" *ngFor="let item of header; let i = index">
+        <div class="view_elem_wrapper" (click)='sort(i, item.description)'>
+          <img src="src/imgs/arrow.svg" alt="logo" [ngClass]="{'active_sorded': sorted.index == i, 'svg_rotate': sorted.type == 'desc' && sorted.index == i}">
+          <span>{{item.name}}</span>
+        </div>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="view_row" *ngFor="let elem of rows; let i = index">
+      <td class="view_elem">{{(elem.dt) * 1000 | date:'dd.MM.yy HH:mm z'}}</td>
+      <td class="view_elem">{{elem.main.temp}} °C</td>
+      <td class="view_elem">{{elem.main.humidity}}</td>
+      <td class="view_elem">{{elem.weather[0].description}}</td>
+      <td class="view_elem">{{elem.wind.speed}} m/s</td>
+    </tr>
+  </tbody>
+</table>

@@ -1,7 +1,7 @@
 <layout-search (update)='getForecast($event)' [city]='city' [errorMessage]='errorMessage'></layout-search>
 <div *ngIf="data_city">
     <div>
-        {{data_city.city.name}}, {{data_city.city.country}}
+        Город: {{data_city.city.name}}, {{data_city.city.country}}
     </div>
     <div>
         Восход: {{(data_city.city.sunrise) * 1000 | date:'dd-MM-yy HHw:mm z'}}
@@ -9,15 +9,5 @@
     <div>
         Закат: {{(data_city.city.sunset) * 1000 | date:'dd-MM-yy HH:mm z'}}
     </div>
-    <div *ngFor="let elem of data_city.list; let i = index">
-        <div>
-            {{(elem.dt) * 1000 | date:'dd-MM-yy HH:mm z'}}
-            {{elem.main.temp}} °C
-            {{elem.main.feels_like}} °C
-            {{elem.main.temp_min}} °C / {{elem.main.temp_max}} °C
-            {{elem.main.humidity}} %
-            {{elem.weather[0].description}}
-            {{elem.wind.speed}} m/s
-        </div>
-    </div>
+    <layout-table [header]='header_table' [rows]='data_city.list'></layout-table>
 </div>
