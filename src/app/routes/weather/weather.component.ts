@@ -37,7 +37,7 @@ export class WeatherComponent implements OnInit {
           description: "wind.speed"
       }
   ];
-  
+
   errorMessage: string;
   param;
 
@@ -65,10 +65,13 @@ export class WeatherComponent implements OnInit {
         );
       }
     }
+    console.log("a");
+
   }
 
   getForecast(city: string) {
     this.errorMessage = null;
+    this.location.replaceState(location.pathname,`?search=${city}`);
     this.appDataService.getForecast(city).subscribe(
       res => this.data_city = res,
       error => console.log(error)
