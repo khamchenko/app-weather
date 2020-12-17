@@ -44,20 +44,12 @@ export default StyleSheet.create({
   'view_elem_wrapper img': {
     height: [{ unit: 'px', value: 12 }],
     margin: [{ unit: 'px', value: 0 }, { unit: 'px', value: 5 }, { unit: 'px', value: 0 }, { unit: 'px', value: 5 }],
-    opacity: '0',
-    transitionDuration: '0.8s',
-    transitionProperty: 'transform, opacity'
+    opacity: '0'
   },
   'view_elem_wrapper:hover img': {
     opacity: '1'
   },
   'view_elem_wrapper span': {
     padding: [{ unit: 'px', value: 0 }, { unit: 'px', value: 5 }, { unit: 'px', value: 0 }, { unit: 'px', value: 5 }]
-  },
-  active_sorded: {
-    opacity: '1 !important'
-  },
-  svg_rotate: {
-    transform: 'rotate(180deg)'
   }
 });
