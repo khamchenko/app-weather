@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './layout-body.component.html',
   styleUrls: ['./layout-body.component.css']
 })
-export class SpaBodyComponent implements OnInit {
+export class BodyComponent implements OnInit {
 
   constructor() { }
 

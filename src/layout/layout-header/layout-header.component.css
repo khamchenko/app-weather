@@ -2,15 +2,31 @@
     background-color: #48484A;
 }
 
+.wrapper_menu {
+    cursor: pointer;
+    margin: 10px 20px;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition-duration: 0.5s;
+    transition-property: all;
+}
+
+.wrapper_menu:hover {
+    background-color: rgb(255 255 255 / 12%);
+}
+
+.menu_icon {
+    height: 30px;
+}
+
 .title-bar {
     flex-grow: 1;
     display: flex;
-    min-height: 120px;
     padding: 10px 0;
-}
-
-.title-bar img {
-    height: 120px;
 }
 
 .menu-area {

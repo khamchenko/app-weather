@@ -7,9 +7,9 @@ import { visibility } from '../services/animations';
   selector: 'layout-content',
   templateUrl: './layout-content.component.html',
   styleUrls: ['./layout-content.component.css'],
-   animations: [visibility]
+  animations: [visibility]
 })
-export class SpaContentComponent implements OnInit {
+export class ContentComponent implements OnInit {
 
   constructor(private screenService: ScreenService, private menuService: MenuService) { }
 

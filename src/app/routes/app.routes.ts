@@ -5,11 +5,16 @@ import { MainComponent } from './main/main.component';
 import { NotFoundComponent } from './not_found/not_found.component';
 
 export const appRoutes: Routes = [
+
+  { path: '', redirectTo: 'weather', pathMatch: 'full'},
   {
     path: '',
     component: MainComponent,
     children: [
-      { path: 'weather', component: WeatherComponent },
+      {
+          path: 'weather',
+          component: WeatherComponent
+      },
     ]
   },
   {

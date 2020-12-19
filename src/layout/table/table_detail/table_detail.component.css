@@ -1,0 +1,38 @@
+:host {
+    display: contents;
+    width: 100%;
+}
+
+.view_elem {
+    padding: 10px 10px;
+    text-align: right;
+}
+
+td:nth-child(1) {
+    text-align: left;
+    white-space: nowrap;
+}
+
+.view_detail_wrapper {
+    text-align: center;
+    background-color: rgb(88 88 88);
+}
+.view_detail {
+
+}
+
+.view_detail_main {
+    display: flex;
+    align-items:flex-start;
+    justify-content:flex-start;
+    flex-direction: column;
+    white-space: nowrap;
+    flex-grow: 1;
+    padding: 5px 20px;
+
+}
+
+.view_detail_table {
+    display: flex;
+    justify-content: center;
+}

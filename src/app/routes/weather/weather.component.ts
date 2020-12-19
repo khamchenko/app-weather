@@ -1,8 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { Location, DatePipe } from '@angular/common';
+
 import { AppDataService } from '../../services/app-data.service';
+import { HeaderService } from '../../../layout/services/header.service';
+import { SnackService } from '../../../layout/services/snack.service';
+
+import { WeatherHeaderItems } from './header.table';
 
 import { visibility } from '../../../layout/services/animations';
+import _ from "lodash";
 
 @Component({
   selector: 'app-weather',
@@ -14,34 +20,15 @@ import { visibility } from '../../../layout/services/animations';
 
 export class WeatherComponent implements OnInit {
   city;
-  data_city;
-  header_table = [
-      {
-          name: "Дата",
-          description: "dt"
-      },
-      {
-          name: "Температура (°C)",
-          description: "main.temp"
-      },
-      {
-          name: "Влажность (%)",
-          description: "main.humidity"
-      },
-      {
-          name: "Описание",
-          description: "weather[0].description"
-      },
-      {
-          name: "Скорость ветра (м/c)",
-          description: "wind.speed"
-      }
-  ];
-
+  current_weather;
+  daily_weather;
+  caption = "Прогноз на следующие 5 дней";
+  header_table = WeatherHeaderItems;
   errorMessage: string;
   param;
 
-  constructor(private location: Location, private appDataService: AppDataService, private datePipe: DatePipe) {  }
+  constructor(private location: Location, private appDataService: AppDataService, private datePipe: DatePipe, private headerService: HeaderService, private snackService: SnackService) {
+  }
 
   ngOnInit() {
     if (location.search) {
@@ -56,25 +43,75 @@ export class WeatherComponent implements OnInit {
         },
           {});
 
-      if (this.param.search) {
-        this.city = this.param.search;
+      if (this.param)
+        if (this.param.search) {
+          this.city = this.param.search;
 
-        this.appDataService.getForecast(this.city).subscribe(
-          res => this.data_city = res,
-          error => console.log(error)
-        );
-      }
+          this.getForecast(this.city);
+        }
     }
-    console.log("a");
-
   }
 
   getForecast(city: string) {
     this.errorMessage = null;
-    this.location.replaceState(location.pathname,`?search=${city}`);
+
+    this.location.replaceState(location.pathname, `?search=${city}`);
+    this.city = city;
+
     this.appDataService.getForecast(city).subscribe(
-      res => this.data_city = res,
-      error => console.log(error)
+      res => {
+        let lat = res.city.coord.lat;
+        let lon = res.city.coord.lon;
+
+        this.getOneCall(lat, lon);
+      },
+      err => {
+        this.snackService.addItem({
+          error: err.error.cod,
+          message: err.error.message,
+          imageFile: "src/imgs/icon_stauts_err.svg",
+          alt: "error",
+          type: "error"
+        });
+      }
     );
+  }
+
+  getOneCall(lat, lon) {
+    this.errorMessage = null;
+
+    this.appDataService.getOneCall(lat, lon).subscribe(
+      res => {
+        let currentTimeZone = new Date().getTimezoneOffset() * 60;
+
+        let sunrise = new Date((res.current.sunrise + res.timezone_offset + currentTimeZone) * 1000);
+
+        let sunset = new Date((res.current.sunset + res.timezone_offset + currentTimeZone) * 1000);
+
+        this.current_weather = {
+          ...res.current,
+          timezone: res.timezone_offset,
+          sunrise,
+          sunset
+        };
+
+        this.daily_weather = _.map(res.daily, (elem) => {
+
+          let sunrise = new Date((elem.sunrise + res.timezone_offset + currentTimeZone) * 1000);
+
+          let sunset = new Date((elem.sunset + res.timezone_offset + currentTimeZone) * 1000);
+
+          return {
+            ...elem,
+            sunrise,
+            sunset,
+            active: false
+          }
+        })
+      },
+      error => {
+        console.log(error);
+      }
+    )
   }
 }

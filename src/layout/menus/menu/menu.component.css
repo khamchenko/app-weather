@@ -1,11 +1,51 @@
 :host {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     display: flex;
-    align-items: flex-end;
-    justify-content: flex-end;
-    flex-grow: 1;
+    z-index: 999;
+    position: fixed;
+    justify-content: flex-start;
 }
 
-ul {
+.menu_nav {
+    top: 0;
+    flex: 1 0 auto;
+    height: 100%;
+    display: flex;
+    outline: 0;
+    z-index: 1200;
+    position: fixed;
+    overflow-y: auto;
+    overflow-x: hidden;
+    flex-direction: column;
+    width: 240px;
+    background-color: #212121;
+}
+
+.empty-area {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    z-index: 999;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.wrapper-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 2px solid rgb(255, 106, 51);
+}
+.menu_logo {
+    width: 200px;
+}
+/* ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -13,34 +53,4 @@ ul {
 
 li {
     display: inline;
-}
-
-:host(.vertical-menu) {
-    display: inline-block;
-    max-width: 160px;
-    min-width: 160px;
-    height: 100vh;
-    padding-left: 4px;
-    flex-grow: 0;
-    background-color: rgb(53, 133, 138);
-    overflow-x: hidden;
-    overflow-y: auto;
-}
-
-:host(.vertical-menu>span.icon) {
-    width: 14px;
-    height: 14px;
-}
-
-div {
-    margin-top: 20px;
-}
-
-div button {
-    background-color: rgb(225, 224, 243)
-}
-
-button.horizontal {
-    margin-left: 20px;
-    margin-bottom: 7px;
-}
+} */

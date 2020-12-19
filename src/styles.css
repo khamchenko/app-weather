@@ -1,3 +1,25 @@
 body {
-    font-family: 'PT Sans', sans-serif;
+    font-family: Roboto,sans-serif;
+}
+
+//scrollbar
+::-webkit-scrollbar-track {
+    position: absolute;
+    background-color: #BFBFBD;
+}
+::-webkit-scrollbar-thumb {
+    position: absolute;
+    -webkit-border-radius: 0px;
+    border-radius: 0px;
+    background-color: #da661b;
+    height: 5px;
+}
+::-webkit-scrollbar{
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    transition: 1s;
+}
+::-webkit-scrollbar-thumb:hover{
+    background-color:#1E222D;
 }

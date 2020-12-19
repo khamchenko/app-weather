@@ -1,14 +1,15 @@
-<nav>
-    <ul>
-        <li *ngFor="let item of menuService.items">
-            <layout-menu-item [item]='item' [ngClass]='{"vertical-menu" : menuService.isVertical}' [parentIsPopup]='false'>
-
-            </layout-menu-item>
-        </li>
-    </ul>
-
-</nav>
-<div [ngClass]='menuService.isVertical? "dropup": "dropleft"'>
-    <button class="btn btn-default btn-sm dropdown-toggle" *ngIf="!menuService.showVerticalMenu" [ngClass]='{"horizontal": !menuService.isVertical}' (click)='menuService.toggleOrientation()'></button>
-
+<div>
+    <div class="menu_nav">
+        <div class="wrapper-logo">
+            <img class="menu_logo" src="src/imgs/logo.png" alt="logo">
+        </div>
+        <nav>
+            <ul class="mx-0 px-0">
+                <li class="d-flex justify-content-center" *ngFor="let item of menuService.items">
+                    <layout-menu-item [item]='item'></layout-menu-item>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="empty-area" (click)="menuService.toggleMenu()"></div>
 </div>

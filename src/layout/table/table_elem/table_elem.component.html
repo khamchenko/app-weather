@@ -1,0 +1,9 @@
+<tr>
+  <td class="view_elem">{{(elem.dt) * 1000| date:'dd.MM, EEE'}}</td>
+  <td class="view_elem">{{elem.temp.max.toFixed(0)}} / {{elem.temp.min.toFixed(0)}}</td>
+  <td class="view_elem">{{elem.humidity}}</td>
+  <td class="view_elem" *ngFor="let item of elem.weather; let j = index">
+    <span>{{item.description}}</span>
+  </td>
+  <td class="view_elem">{{elem.wind_speed}}</td>
+</tr>

@@ -22,7 +22,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
     AppComponent,
     WeatherComponent,
     MainComponent,
-    NotFoundComponent
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule, LayoutModule, RouterModule.forRoot(appRoutes), FormsModule, HttpClientModule

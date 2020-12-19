@@ -9,12 +9,12 @@ import _ from "lodash";
 export class TableComponent implements OnInit {
   @Input() header;
   @Input() rows;
+  @Input() caption;
 
   sorted = {
       type: "asc",
-      index: 0
+      index: -1
   }
-
   constructor() {
 
   }
@@ -29,5 +29,11 @@ export class TableComponent implements OnInit {
       this.sorted.index = index;
 
       this.rows = _.orderBy(this.rows, [description], [type_sort]);
+  }
+
+  getInfoDay(index) {
+      let state = this.rows[index].active;
+
+      this.rows[index].active = !state;
   }
 }

@@ -1,0 +1,47 @@
+:host {
+    position: fixed;
+    display: flex;
+    right: 20px;
+    bottom: 40px;
+    flex-direction: column;
+    padding: 0 16px;
+    color: #fff;
+}
+
+.wrapper_snack {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 16px;
+    border-radius: 4px;
+    font-weight: 500;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-size: 0.875rem;
+    line-height: 1.43;
+    letter-spacing: 0.01071em;
+    margin: 5px 0;
+}
+
+.type_error {
+    background-color: #f44336;
+}
+
+.wrapper_icon {
+    display: flex;
+    opacity: 0.9;
+    padding: 7px 0;
+    font-size: 22px;
+    margin-right: 12px;
+}
+
+.wrapper_icon img {
+    width: 30px;
+}
+
+.wrapper_error {
+    padding: 5px;
+}
+
+.wrapper_message {
+    padding: 5px;
+}

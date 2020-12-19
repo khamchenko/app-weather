@@ -1,0 +1,59 @@
+<tr class="view_detail_wrapper">
+  <td colspan="100%" class="view_detail">
+    <div class="view_detail_main">
+      <div>
+        Восход: {{(elem.sunrise) | date:'EEE dd.MM.yy HH:mm'}}
+      </div>
+      <div>
+        Закат: {{(elem.sunset) | date:'EEE dd.MM.yy HH:mm'}}
+      </div>
+    </div>
+    <div class="view_detail_table">
+      <table>
+        <thead>
+          <th></th>
+          <th>Утро</th>
+          <th>День</th>
+          <th>Вечер</th>
+          <th>Ночь</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="view_elem">
+              Температура
+            </td>
+            <td class="view_elem">
+              {{elem.temp.morn.toFixed(0)}}
+            </td>
+            <td class="view_elem">
+              {{elem.temp.day.toFixed(0)}}
+            </td>
+            <td class="view_elem">
+              {{elem.temp.eve.toFixed(0)}}
+            </td>
+            <td class="view_elem">
+              {{elem.temp.night.toFixed(0)}}
+            </td>
+          </tr>
+          <tr>
+            <td class="view_elem">
+              Ощущается
+            </td>
+            <td class="view_elem">
+              {{elem.feels_like.morn.toFixed(0)}}
+            </td>
+            <td class="view_elem">
+              {{elem.feels_like.day.toFixed(0)}}
+            </td>
+            <td class="view_elem">
+              {{elem.feels_like.eve.toFixed(0)}}
+            </td>
+            <td class="view_elem">
+              {{elem.feels_like.night.toFixed(0)}}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </td>
+</tr>

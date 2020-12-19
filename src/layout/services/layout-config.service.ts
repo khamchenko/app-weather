@@ -6,16 +6,16 @@ export interface Icons {
   alt: string;
 }
 
-export interface SpaConfigSettings {
+export interface LayoutConfigSettings{
   showUserControls?: boolean;
   socialIcons?: Array<Icons>;
 }
 
 @Injectable()
-export class SpaConfigService {
+export class LayoutConfigService {
   showUserControls = true;
   socialIcons = new Array<Icons>();
-  configure(settings: SpaConfigSettings): void {
+  configure(settings: LayoutConfigSettings): void {
     Object.assign(this, settings);
   }
 }

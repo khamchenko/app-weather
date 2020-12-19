@@ -1,0 +1,13 @@
+<div class="animate">
+    <div class="wrapper_snack type_error" *ngFor="let item of snackService.items">
+        <div class="wrapper_icon">
+            <img [src]="item.imageFile" [alt]="item.alt" />
+        </div>
+        <div class="wrapper_error">
+            {{item.error}}
+        </div>
+        <div class="wrapper_message">
+            {{item.message}}
+        </div>
+    </div>
+</div>

@@ -8,6 +8,7 @@ export class ScreenService {
     largePixels = 780;
     screenWidth: number;
     screenHeight: number;
+    
     constructor() {
         try {
             this.screenWidth = window.innerWidth;

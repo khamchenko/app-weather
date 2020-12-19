@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { SpaConfigService } from '../services/layout-config.service';
+import { LayoutConfigService } from '../services/layout-config.service';
 
 @Component({
   selector: 'icon-bar',
@@ -10,7 +10,7 @@ import { SpaConfigService } from '../services/layout-config.service';
 export class IconBarComponent implements OnInit {
   @Input() showIcons;
 
-  constructor(private spaConfigService: SpaConfigService) { }
+  constructor(private layoutConfigService: LayoutConfigService) { }
 
   ngOnInit() {
 

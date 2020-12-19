@@ -4,14 +4,16 @@ import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { SpaBodyComponent } from './layout-body/layout-body.component';
-import { SpaHeaderComponent } from './layout-header/layout-header.component';
-import { SpaContentComponent } from './layout-content/layout-content.component';
-import { SpaFooterComponent } from './layout-footer/layout-footer.component';
+import { BodyComponent } from './layout-body/layout-body.component';
+import { HeaderComponent } from './layout-header/layout-header.component';
+import { ContentComponent } from './layout-content/layout-content.component';
+import { FooterComponent } from './layout-footer/layout-footer.component';
 
-import { SpaConfigService } from './services/layout-config.service';
+import { LayoutConfigService } from './services/layout-config.service';
 import { MenuService } from './services/menu.service';
+import { HeaderService } from './services/header.service';
 import { ScreenService } from './services/screen.service';
+import { SnackService } from './services/snack.service';
 
 import { ScreenSmallDirective } from './directives/screen-small.directive';
 import { ScreenLargeDirective } from './directives/screen-large.directive';
@@ -19,15 +21,17 @@ import { ScreenLargeDirective } from './directives/screen-large.directive';
 import { IconBarComponent } from './icon-bar/icon-bar.component';
 import { MenuComponent } from './menus/menu/menu.component';
 import { MenuItemComponent } from './menus/menu-item/menu-item.component';
-import { PopupMenuComponent } from './menus/popup-menu/popup-menu.component';
 import { SearchComponent } from './search/search.component';
 import { TableComponent } from './table/table.component';
+import { TableElemComponent } from './table/table_elem/table_elem.component';
+import { TableDetailComponent } from './table/table_detail/table_detail.component';
+import { SnackBarComponent } from './snack-bar/snack-bar.component';
 
 @NgModule({
   imports: [CommonModule, RouterModule, FormsModule, ReactiveFormsModule, BrowserAnimationsModule],
-  declarations: [SpaBodyComponent, SpaHeaderComponent, SpaContentComponent, SpaFooterComponent, IconBarComponent, ScreenSmallDirective, ScreenLargeDirective, MenuComponent, MenuItemComponent, PopupMenuComponent, SearchComponent, TableComponent
+  declarations: [BodyComponent, HeaderComponent, ContentComponent, FooterComponent, IconBarComponent, ScreenSmallDirective, ScreenLargeDirective, MenuComponent, MenuItemComponent, SearchComponent, TableComponent, TableElemComponent, TableDetailComponent, SnackBarComponent
   ],
-  exports: [SpaBodyComponent, ScreenLargeDirective, ScreenSmallDirective, SearchComponent, TableComponent],
-  providers: [SpaConfigService, ScreenService, MenuService]
+  exports: [BodyComponent, ScreenLargeDirective, ScreenSmallDirective, SearchComponent, TableComponent, TableElemComponent, TableDetailComponent, SnackBarComponent],
+  providers: [LayoutConfigService, ScreenService, MenuService, HeaderService, SnackService]
 })
 export class LayoutModule { }

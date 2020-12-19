@@ -1,4 +1,4 @@
 <div *ngIf="showIcons">
-    <a *ngFor="let icon of spaConfigService.socialIcons" [href]="icon.url" [title]='icon.alt' target='_blank'>
-        <img class='top-img' [src]="icon.imageFile" [alt]="icon.alt"></a>
+  <a *ngFor="let icon of layoutConfigService.socialIcons" [href]="icon.url" [title]='icon.alt' target='_blank'>
+    <img class='top-img' [src]="icon.imageFile" [alt]="icon.alt"></a>
 </div>

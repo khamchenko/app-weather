@@ -1,8 +1,5 @@
 :host {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-grow: 1;
+    width: 100%;
 }
 
 .search-style {
@@ -11,7 +8,6 @@
 
 .search-style input {
     border-radius: 5px 0px 0px 5px;
-    min-width: 300px;
     border: 1px solid #ececed;
     padding: 4pt 8pt;
     color: #48484a;

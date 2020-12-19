@@ -10,8 +10,12 @@ export class AppDataService {
   constructor(private http: HttpClient) { }
 
   getForecast(search: string): Observable<any> {
+    const url = `${this.url}/forecast?exclude=daily&lang=ru&units=metric&q=${search}`
 
-    const url = `${this.url}?exclude=hourly,daily&lang=ru&units=metric&q=${search}`
+    return this.http.get(url);
+  }
+  getOneCall(lat: string, lon: string): Observable<any> {
+    const url = `${this.url}/onecall?lat=${lat}&lon=${lon}&lang=ru&units=metric`
 
     return this.http.get(url);
   }
