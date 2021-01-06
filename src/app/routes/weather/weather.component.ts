@@ -8,7 +8,7 @@ import { SnackService } from '../../../layout/services/snack.service';
 import { WeatherHeaderItems } from './header.table';
 
 import { visibility } from '../../../layout/services/animations';
-import _ from "lodash";
+import _ from 'lodash';
 
 @Component({
   selector: 'app-weather',

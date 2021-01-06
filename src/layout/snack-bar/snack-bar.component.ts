@@ -8,7 +8,7 @@ import { SnackService } from '../services/snack.service';
  })
 
 export class SnackBarComponent implements OnInit {
-  constructor(private snackService: SnackService) { }
+  constructor(public snackService: SnackService) { }
 
   ngOnInit() {
      

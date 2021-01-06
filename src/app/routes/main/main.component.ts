@@ -9,7 +9,7 @@ import { SnackService } from '../../../layout/services/snack.service';
 
 export class MainComponent implements OnInit {
 
-  constructor(private snackService: SnackService) { }
+  constructor(public snackService: SnackService) { }
 
   ngOnInit() {
   }

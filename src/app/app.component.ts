@@ -14,17 +14,17 @@ export class AppComponent {
     const config: LayoutConfigSettings = {
       socialIcons: [
         {
-          imageFile: 'src/imgs/facebook.svg',
+          imageFile: 'assets/imgs/facebook.svg',
           alt: 'Facebook',
           url: 'https://www.facebook.com/groups/270748973021342'
         },
         {
-          imageFile: 'src/imgs/github.svg',
+          imageFile: 'assets/imgs/github.svg',
           alt: 'Github',
           url: 'https://github.com/search?q=openweathermap&ref=cmdform'
         },
         {
-          imageFile: 'src/imgs/twitter.svg',
+          imageFile: 'assets/imgs/twitter.svg',
           alt: 'Twitter',
           url: 'https://twitter.com/OpenWeatherMap'
         }

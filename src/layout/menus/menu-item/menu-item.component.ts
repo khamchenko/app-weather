@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ElementRef, Renderer, HostListener } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { MenuItem, MenuService } from '../../services/menu.service';
 import { Router, NavigationEnd } from '@angular/router';
 import { visibility } from '../../services/animations';
@@ -13,10 +13,8 @@ export class MenuItemComponent implements OnInit {
   @Input() item: MenuItem;
   isActiveRoute = false;
 
-  constructor(private menuService: MenuService,
-    private router: Router,
-    private el: ElementRef,
-    private renderer: Renderer) { }
+  constructor(public menuService: MenuService,
+    private router: Router) { }
 
   ngOnInit() {
     this.checkingActiveRoute(location.pathname);

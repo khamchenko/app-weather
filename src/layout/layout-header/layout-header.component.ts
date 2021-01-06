@@ -13,7 +13,7 @@ import { visibility } from '../services/animations';
 export class HeaderComponent implements OnInit {
   flagForIcons = true;
 
-  constructor(private screenService: ScreenService, private menuService: MenuService) { }
+  constructor(private screenService: ScreenService, public menuService: MenuService) { }
 
   ngOnInit() {
   }

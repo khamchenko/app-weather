@@ -11,7 +11,7 @@ import { visibility } from '../../services/animations';
 })
 export class MenuComponent implements OnInit {
 
-  constructor(private menuService: MenuService, private screenService: ScreenService) { }
+  constructor(public menuService: MenuService, public screenService: ScreenService) { }
 
   ngOnInit() {
   }

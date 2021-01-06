@@ -5,7 +5,7 @@
       <tr class="view_row">
         <th class="view_elem" *ngFor="let item of header; let i = index">
           <div class="view_elem_wrapper" (click)='sort(i, item.description)'>
-            <img src="src/imgs/arrow.svg" alt="logo" [ngClass]="{'active_sorded': sorted.index == i, 'svg_rotate': sorted.type == 'desc' && sorted.index == i}">
+            <img src="assets/imgs/arrow.svg" alt="logo" [ngClass]="{'active_sorded': sorted.index == i, 'svg_rotate': sorted.type == 'desc' && sorted.index == i}">
             <span>{{item.name}}</span>
           </div>
         </th>
