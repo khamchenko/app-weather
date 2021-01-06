@@ -1,5 +1,5 @@
 {
-  "name": "car-fest",
+  "name": "app-weather",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
